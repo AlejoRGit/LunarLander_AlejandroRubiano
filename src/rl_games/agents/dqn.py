@@ -25,9 +25,19 @@ import torch.optim as optim
 
 
 class QNetwork(nn.Module):
-    # TODO: Implement the QNetwork
+    def __init__(self, state_dim, action_dim, hidden):
+        super().__init__()
 
-    pass
+        self.net =nn.Sequential(
+            nn.Linear(state_dim, 64),
+            nn.ReLU(),
+            nn.Linear(64,32),
+            nn.ReLU(),
+            nn.Linear(32, action_dim)
+        )
+
+    def forward(self, x):
+        return self.net(x)
 
 
 # ── Replay buffer ────────────────────────────────────────────────────

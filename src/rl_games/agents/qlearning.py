@@ -10,12 +10,12 @@ import numpy as np
 # Dims 0-5 are continuous; dims 6-7 are binary leg-contact flags.
 _OBS_BOUNDS = np.array(
     [
-        [-1.5, 1.5],
+        [-1, 1],
         [-0.5, 1.5],
-        [-5.0, 5.0],
-        [-5.0, 5.0],
-        [-3.14, 3.14],
-        [-5.0, 5.0],
+        [-2.0, 2.0],
+        [-2.0, 2.0],
+        [-1, 1],
+        [-1.0, 1.0],
     ]
 )
 
@@ -27,12 +27,12 @@ class QLearningAgent:
         self,
         env_id: str,
         *,
-        n_bins: int = 10,
-        lr: float = 0.1,
+        n_bins: int = 6,
+        lr: float = 0.3,
         gamma: float = 0.99,
-        epsilon_start: float = 1.0,
+        epsilon_start: float = 1,
         epsilon_end: float = 0.01,
-        epsilon_decay: float = 0.9995,
+        epsilon_decay: float = 0.995,
     ) -> None:
         self.env_id = env_id
         self.n_bins = n_bins
@@ -105,6 +105,7 @@ class QLearningAgent:
                 action = self.select_action(state)
                 # Take action
                 next_obs, reward, terminated, truncated, _ = env.step(action)
+                done = terminated or truncated
                 # Update state
                 next_state = self.discretize(next_obs)
                 # Update Q-table
