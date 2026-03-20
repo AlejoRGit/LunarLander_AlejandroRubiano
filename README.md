@@ -210,69 +210,77 @@ Saves are written to `saves/` in the working directory.
 ## DESARROLLO DEL TALLER
 ## Diagramas del entendimiento de los agentes 
 
-## <font color="green">  Agente Qlearning <code>
+## <font color="green"> Agente Qlearning </font><code></code>
 
 <details>
   <summary>📸 Haz clic para ver el diagrama que explica el proceso del agente</summary>
   <br>
-  <a href="Diagramas\Diagrama QLearning.jpg">
-  <img src="Diagramas\Diagrama QLearning.jpg"style="max-width: 100%; border-radius: 10px;">
+  <a href="Diagramas/Diagrama QLearning.jpg">
+  <img src="Diagramas/Diagrama QLearning.jpg" style="max-width: 100%; border-radius: 10px;">
   </a>
 </details>
+
 El proceso de Qlearning se enfoca en tomar decisiones e ir mirando que recompensa obtiene y por medio de la ecuación de Bellman va guardando los datos de Q futuro, teniendo presente que tan buena es la acción en el estado actual y a futuro. Con este aprendizaje toma la siguiente decisión y repite el proceso optimizando cada vez el mejor valor futuro o Max Q. Comienza explorando mucho y después va usando más el aprendizaje por lo que va disminuyendo el valor Epsilon. 
 <br>
 <br>
 
-## <font color="lightgreen">  Agente DQN <code>
+## <font color="lightgreen"> Agente DQN </font><code></code>
 
 <details>
   <summary>📸 Haz clic para ver el diagrama que explica el proceso del agente</summary>
   <br>
-  <a href="Diagramas\Diagrama DQN.jpg">
-  <img src="Diagramas\Diagrama DQN.jpg"style="max-width: 100%; border-radius: 10px;">
+  <a href="Diagramas/Diagrama DQN.jpg">
+  <img src="Diagramas/Diagrama DQN.jpg" style="max-width: 100%; border-radius: 10px;">
   </a>
 </details>
+
 Se comienza realizando la definición de la red neuronal, incluyendo los parámetros de buffer y el agente. Después el agente va tomando decisiones, a partir de un batch del buffer. E igualmente va utilizando la ecuación de Bellman para seguir calculando los mejores valores futuros. Con la diferencia que ahora no solo optimiza la ecuación sino que adicional va mejorando el entrenamiento de la red lo que termina dando mejores resultados significativamente. Pero también a un costo computacional mucho mayor. 
 <br>
 <br>
 
+---
+
 ## Mejores modelos desarrollados 
 
-## <font color="lightblue">  Agente DQN <code>
+## <font color="lightblue"> Agente Qlearning </font><code></code>
 
 <details>
-  <summary>📸 Haz clic para ver el los mejores resultados del Agente Qlearning</summary>
+  <summary>📸 Haz clic para ver los mejores resultados del Agente Qlearning</summary>
   <br>
-  <a href="Resultados\Mejores Qlearning.png">
-  <img src="Resultados\Mejores Qlearning.png"style="max-width: 100%; border-radius: 10px;">
+  <a href="Resultados/Mejores Qlearning.png">
+  <img src="Resultados/Mejores Qlearning.png" style="max-width: 100%; border-radius: 10px;">
   </a>
 </details>
+
 Aunque el modelo no logra obtener resultados positivos en las medias, hay pocos casos donde la media logra ser positiva llegando a un valor máximo de 21.95 después de 12000 episodios. 
 <br>
 <br>
 
 <details>
-  <summary>📸 Haz clic para ver el los mejores resultados simulados del Agente Qlearning</summary>
+  <summary>📸 Haz clic para ver los mejores resultados simulados del Agente Qlearning</summary>
   <br>
-  <a href="Resultados\Mejores simulados Qlearning.png">
-  <img src="Resultados\Mejores simulados Qlearning.png"style="max-width: 100%; border-radius: 10px;">
+  <a href="Resultados/Mejores simulados Qlearning.png">
+  <img src="Resultados/Mejores simulados Qlearning.png" style="max-width: 100%; border-radius: 10px;">
   </a>
 </details>
-Sin embargo, simulando resultados una vez se tiene el modelo entrenado, se logran obtener buenos resultados llegando a valores altos y asta un valor de superación de la prueba de 207, lo cual muestra que, aunque con mayor dificultad el modelo es capaz de aprender lo suficiente para superar el reto 
+
+Sin embargo, simulando resultados una vez se tiene el modelo entrenado, se logran obtener buenos resultados llegando a valores altos y hasta un valor de superación de la prueba de 207, lo cual muestra que, aunque con mayor dificultad el modelo es capaz de aprender lo suficiente para superar el reto. 
 <br>
 <br>
 
-## <font color="bluelig">  Agente DQN <code>
+## <font color="deepskyblue"> Agente DQN </font><code></code>
+
 <details>
-  <summary>📸 Haz clic para ver el los mejores resultados simulados del Agente DQN</summary>
+  <summary>📸 Haz clic para ver los mejores resultados simulados del Agente DQN</summary>
   <br>
-  <a href="Resultados\Mejores resultados DQN simulados.png">
-  <img src="Resultados\Mejores resultados DQN simulados.png"style="max-width: 100%; border-radius: 10px;">
+  <a href="Resultados/Mejores resultados DQN simulados.png">
+  <img src="Resultados/Mejores resultados DQN simulados.png" style="max-width: 100%; border-radius: 10px;">
   </a>
 </details>
-Por otro lado, el agente DQN fue capaz de aprender de manera excelente como aterrizar logrando en 3000 episodios excelentes resultados. Y entre esos al momento de simular los datos se logran obtener valores de más de 300 de recompensas, específicamente el valor máximo logra 309.21
+
+Por otro lado, el agente DQN fue capaz de aprender de manera excelente como aterrizar logrando en 3000 episodios excelentes resultados. Y entre esos al momento de simular los datos se logran obtener valores de más de 300 de recompensas, específicamente el valor máximo logra 309.21.
 <br>
 <br>
 
-Los dos modelos son capaces de aprender y aterrizar la nave, aunque uno de los modelos llega en menos episodios y con mucha mejor eficiencia, mostrando la gran capacidad de aprendizaje de las redes neuronales 
+Los dos modelos son capaces de aprender y aterrizar la nave, aunque uno de los modelos llega en menos episodios y con mucha mejor eficiencia, mostrando la gran capacidad de aprendizaje de las redes neuronales.
 
